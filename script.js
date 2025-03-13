@@ -14,6 +14,20 @@ function verificarNome() {
         mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "ana") {
         mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "fabiola") {
+        mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "robinson") {
+        mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "everton") {
+        mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "vinivius") {
+        mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "vinícius") {
+        mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "robinson") {
+        mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "wiliam") {
+        mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "rogeria") {
         mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "joao" || nome === "joão") {
