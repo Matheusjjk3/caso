@@ -1,14 +1,12 @@
 function verificarNome() {
     var nome = document.getElementById("nomeInput").value.toLowerCase();
     
-    // Remove todas as mensagens anteriores
-    var mensagens = document.querySelectorAll(".mensagem");
-    mensagens.forEach(function(mensagem) {
-        mensagem.remove();
-    });
+    // Limpa a mensagem anterior, se houver
+    var mensagemContainer = document.getElementById("mensagemContainer");
+    mensagemContainer.innerHTML = ""; // Limpa o conteúdo anterior
 
     var mensagem = document.createElement("p");
-    mensagem.classList.add("mensagem"); // Adiciona uma classe para facilitar a remoção futura
+    mensagem.classList.add("mensagem"); // Adiciona a classe de estilo para a mensagem
 
     if (nome === "roberto") {
         mensagem.textContent = "Está errado porque tal tal";
@@ -20,11 +18,7 @@ function verificarNome() {
         mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "everton") {
         mensagem.textContent = "Está errado porque tal tal";
-    } else if (nome === "vinivius") {
-        mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "vinícius") {
-        mensagem.textContent = "Está errado porque tal tal";
-    } else if (nome === "robinson") {
         mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "wiliam") {
         mensagem.textContent = "Está errado porque tal tal";
@@ -36,7 +30,8 @@ function verificarNome() {
         mensagem.textContent = "Esta pessoa não está relacionada ao caso";
     }
 
-    document.body.appendChild(mensagem);
+    // Adiciona a mensagem ao container
+    mensagemContainer.appendChild(mensagem);
 }
 
 document.getElementById("nomeInput").addEventListener("keydown", function(event) {

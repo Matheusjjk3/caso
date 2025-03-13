@@ -78,9 +78,10 @@ body {
 }
 
 .formulario p {
-    font-size: 1.6rem;
+    font-weight: 500;
+    font-size: 1.8rem;
     margin-top: 1rem;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 /* Responsividade para telas menores */
@@ -170,16 +171,17 @@ body {
     }
 }
 
+/* Mensagem */
 .mensagem {
-    margin-top: 5px;
-    font-size: 2rem;
-    padding: 2rem;
-    background-color: rgba(61, 61, 57, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    background-color: rgba(209, 209, 209, 0.445);
     border-radius: 2rem;
-    color: #fff;
     text-align: center;
     width: 100%;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
