@@ -1,3 +1,8 @@
+function preencherNome(nome) {
+    // Preenche o campo de input com o nome clicado
+    document.getElementById("nomeInput").value = nome;
+}
+
 function verificarNome() {
     var nome = document.getElementById("nomeInput").value.toLowerCase();
     
@@ -24,6 +29,8 @@ function verificarNome() {
         mensagem.textContent = "Está errado porque tal tal";
     } else if (nome === "rogeria") {
         mensagem.textContent = "Está errado porque tal tal";
+    } else if (nome === "alanzin") {
+        mensagem.textContent = "Está errado porque Alanzin é top demais";
     } else if (nome === "joao" || nome === "joão") {
         mensagem.textContent = "Está certo";
     } else {
