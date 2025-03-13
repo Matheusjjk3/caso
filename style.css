@@ -5,15 +5,15 @@
 }
 
 :root {
-    font-size: 62.5%;
+    font-size: 62.5%; /* Base de 10px para facilitar o cálculo */
     font-family: "Dancing Script", cursive;
 }
 
 body {
     background-image: url('./fundo/fundo.png');
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-size: cover; /* Garante que o fundo cubra toda a tela */
+    background-position: center bottom; /* Fixa o fundo no centro e ao fundo */
+    background-repeat: no-repeat;
     font-family: sans-serif;
     display: flex;
     justify-content: center;
@@ -21,18 +21,24 @@ body {
     height: 100vh;
     padding: 2rem;
     flex-direction: column;
-
     backdrop-filter: blur(4px);
+    overflow: hidden; /* Impede o scroll vertical desnecessário */
 }
 
-.page{
+.page {
+    width: 100%;
     max-width: 900px;
     background-color: rgba(61, 61, 57, 0.8);
     border-radius: 2rem;
     padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden; /* Garante que nada ultrapasse os limites da página */
 }
 
+/* Formulário e input */
 .formulario {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     gap: 1.5rem;
     justify-content: center;
@@ -47,16 +53,18 @@ body {
 
 .input-group {
     display: flex;
-    justify-content: flex-start; /* Alinha os itens à esquerda */
+    justify-content: space-between; /* Garante que o botão e o input fiquem alinhados */
     gap: 1rem;
-    width: 100%; /* Garante que o grupo ocupe toda a largura disponível */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .formulario input {
     border-radius: 10px;
     padding: 5px;
-    width: calc(100% - 120px); /* Garante que o input ocupe a maior parte da largura disponível */
     height: 3.5rem;
+    width: calc(100% - 120px); /* Garante que o input ocupe o restante da largura */
+    box-sizing: border-box;
 }
 
 .formulario button {
@@ -64,8 +72,9 @@ body {
     background-color: #00ff62;
     cursor: pointer;
     font-size: 1.4rem;
-    width: 100px; /* Define o botão como sendo de tamanho fixo */
+    width: 100px;
     height: 3.5rem;
+    box-sizing: border-box;
 }
 
 .formulario p {
@@ -77,39 +86,57 @@ body {
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .input-group {
-        justify-content: space-between;
+        flex-direction: column; /* Empilha o input e o botão quando a tela é menor */
+        justify-content: center;
         gap: 1rem;
     }
 
-    .formulario input,
+    .formulario input {
+        width: 100%; /* O input vai ocupar toda a largura disponível */
+        max-width: none;
+    }
+
     .formulario button {
-        width: 100%;
-        margin-bottom: 1rem; /* Adiciona espaço abaixo do botão */
+        width: 100%; /* O botão também vai ocupar toda a largura disponível */
+    }
+
+    .formulario h1 {
+        font-size: 1.8rem; /* Reduz a fonte do título em telas menores */
+    }
+
+    .page {
+        padding: 1rem; /* Ajusta o padding para telas pequenas */
+        overflow: auto;
     }
 }
 
+/* Ajustes para os cards */
 .cards {
     display: flex;
     justify-content: center;
     gap: 10px;
     width: 100%;
     flex-wrap: wrap;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .card {
     border: 2px solid rgb(150, 150, 150);
     border-radius: 10px;
     overflow: hidden;
-    width: 45%; /* Ajuste para 2 cards por linha */
-    max-width: 150px;
+    width: 18%; /* Ajusta os cards para que fiquem 5 por linha */
+    min-width: 150px;
     text-align: center;
     transition: 0.3s ease-in-out;
     background-color: #a5a5a5;
     margin-bottom: 1rem;
+    box-sizing: border-box;
 }
 
 .card img {
     width: 100%;
+    height: auto; /* Garante que a imagem se ajuste proporcionalmente */
     display: block;
     filter: grayscale(50%);
 }
@@ -124,16 +151,22 @@ body {
     filter: grayscale(0%);
 }
 
-.texto-nome{
+.texto-nome {
     font-size: 1.5rem;
 }
 
-
 /* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .card {
+        width: 48%; /* Ajuste para 2 cards por linha em telas médias */
+        min-width: 150px;
+    }
+}
+
 @media (max-width: 480px) {
     .card {
-        width: 48%; /* Deixa dois cards por linha no celular */
-        max-width: none;
+        width: 100%; /* 1 card por linha em telas pequenas */
+        min-width: 150px;
     }
 }
 
@@ -145,8 +178,8 @@ body {
     border-radius: 2rem;
     color: #fff;
     text-align: center;
-    width: 100%; /* Garante que a mensagem ocupe toda a largura disponível */
-    max-width: 500px; /* Limita a largura máxima da mensagem */
-    margin-left: auto; /* Centraliza horizontalmente */
-    margin-right: auto; /* Centraliza horizontalmente */
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
